@@ -76,10 +76,8 @@ public class MovieControllerTest {
                 .contentType(MediaType.APPLICATION_JSON);
         this.mvc.perform(requestBuilder)
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.title", is("The Godfather")))
-                .andExpect(jsonPath("$.credits.person[0].role", is("Director")))       ;
-
-
+                .andExpect(jsonPath("$.Title", is("The Godfather")))
+                .andExpect(jsonPath("$.Credits.[0].Person.Role", is("Director")))       ;
 
     }
 
