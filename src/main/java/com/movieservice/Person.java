@@ -1,5 +1,8 @@
 package com.movieservice;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Person {
     private String role;
     private String firstName;
