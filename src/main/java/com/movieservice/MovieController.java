@@ -1,6 +1,8 @@
 package com.movieservice;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -38,5 +40,15 @@ public class MovieController {
 
         movie.setCredits(creditList);
         return movie;
+    }
+    @PostMapping("/movies/gross/total")
+    public GrossTotal calculateTotal(@RequestBody List<Movie> movies){
+        GrossTotal grossTotal=new GrossTotal();
+        grossTotal.setResult(movies.stream().mapToDouble(m->{
+            System.out.println(m.getGross());
+            return m.getGross();}).sum());
+        System.out.println(grossTotal.getResult());
+        return grossTotal;
+
     }
 }
