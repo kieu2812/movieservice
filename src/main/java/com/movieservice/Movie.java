@@ -109,4 +109,20 @@ public class Movie {
     public void setCredits(List<Credit> credits) {
         this.credits = credits;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", minutes=" + minutes +
+                ", genre='" + genre + '\'' +
+                ", rating=" + rating +
+                ", metascore=" + metascore +
+                ", description='" + description + '\'' +
+                ", votes=" + votes +
+                ", gross=" + gross +
+                ", year='" + year + '\'' +
+                ", credits=" + credits +
+                '}';
+    }
 }

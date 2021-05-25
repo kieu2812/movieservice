@@ -40,13 +40,15 @@ public class MovieController {
 
         movie.setCredits(creditList);
         return movie;
+
+
     }
     @PostMapping("/movies/gross/total")
     public GrossTotal calculateTotal(@RequestBody List<Movie> movies){
         GrossTotal grossTotal=new GrossTotal();
-        grossTotal.setResult(movies.stream().mapToDouble(m->{
-            System.out.println(m.getGross());
-            return m.getGross();}).sum());
+        grossTotal.setResult(movies.stream().mapToInt(m->{
+            System.out.println(m);
+            return (int) Math.floor(m.getGross());}).sum());
         System.out.println(grossTotal.getResult());
         return grossTotal;
 

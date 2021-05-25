@@ -1,13 +1,13 @@
 package com.movieservice;
 
 public class GrossTotal {
-    private double result;
+    private int result;
 
-    public double getResult() {
+    public int getResult() {
         return result;
     }
 
-    public void setResult(double result) {
+    public void setResult(int result) {
         this.result = result;
     }
 }
